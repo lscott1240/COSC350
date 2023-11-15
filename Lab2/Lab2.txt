@@ -1,0 +1,59 @@
+Luke Scott
+COSC 350
+Lab 2
+Dr. Park
+
+Task 1
+
+1. \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$
+
+2.	EDITOR - "empty"
+	HOME - /home/cosc220
+ 	HOSTNAME - cosc220
+	LD_LIBRARY_PATH - "empty"
+	LESS - "empty"
+	MAIL - "empty"
+	MANPATH - "empty"
+	MORE - "empty"
+	PAGER - "empty"
+	PATH - /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+	PWD - /home/cosc220/Documents/COSC350/Lab2
+	SHELL - /bin/bash
+	TERM - xterm-256color
+	USER - cosc220
+	
+Task 2
+
+1. PS2=$PS1
+2. PS1="[COSC350 \W]:"
+3. PS1=$PS2
+
+Task 3
+
+Task 4
+
+1. ls Lab2.cpp > bar
+2. ls "gone forever" 2>/dev/null
+3. 	echo 3 >> foo
+	echo 5 >> foo
+	echo 2 >> foo
+	echo 1 >> foo
+4. cat foo > bar
+5. cat foo | sort
+	a. EXPLANATOIN: The list of numbers was sorted automatically { 1, 2, 3, 5 } using an insertion sort algorithm
+6. cat foo | sort >> bar
+
+Task 5
+
+1. 	touch numbs
+	seq 1 100 > numbs
+2. wc numbs
+	100 100 292 numbs
+	- Prints new line, word, and byte counts for each file, and file name
+3. cat numbs | seq 25 38 > somenumbs
+4. wc somenumbs
+	14 14 42 somenumbs
+	- 14 lines, 14 words, 42 bytes, name of file
+
+
+

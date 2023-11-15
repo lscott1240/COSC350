@@ -1,0 +1,92 @@
+  
+   Luke Scott
+   COSC    
+   Lab   Task  
+   Dr  Park
+  
+
+ include  stdio h 
+ include  stdlib h 
+ include  sys stat h 
+ include  fcntl h 
+ include  unistd h 
+
+void err_sys char   str 
+ 
+ printf   s   str  
+ exit    
+ 
+
+int main int argc  char   argv[] 
+ 
+ int nread  alphawr  numwr  othwr 
+ char b[ ] 
+ char sp[ ] 
+ char nl[ ] 
+ sp[ ]       
+ nl[ ]    \n  
+
+ if  argc     
+  err_sys  Not enough arguments\n   
+
+ if  argc     
+  err_sys  Too many arguments\n   
+
+ if   nread   open argv[ ]  O_RDONLY       
+  err_sys  Create File Open Error   
+
+ if   alphawr   open argv[ ]  O_RDWR   O_EXCL   O_CREAT             
+  err_sys  Create File Write Error   
+
+ if   numwr   open argv[ ]  O_RDWR   O_EXCL   O_CREAT             
+  err_sys  Create File Write Error    
+
+ if   othwr   open argv[ ]  O_RDWR   O_EXCL   O_CREAT             
+  err_sys  Create File Write Error   
+
+ umask    
+
+ while   read nread  b          
+  
+  if  b[ ]     z     b[ ]     A  
+   
+   write alphawr  b     
+   write numwr  sp     
+   write othwr  sp     
+   
+
+  else if  b[ ]           b[ ]        
+   
+   write alphawr  sp     
+   write numwr  b     
+   write othwr  sp     
+   
+
+  else if  b[ ]        
+   
+   write alphawr  sp     
+   write numwr  sp     
+   write othwr  sp     
+   
+
+  else if  b[ ]     \n  
+   
+   write alphawr  nl     
+   write numwr  nl     
+   write othwr  nl     
+   
+
+  else
+   
+   write alphawr  sp     
+   write numwr  sp     
+   write othwr  b     
+   
+  
+
+ close nread  
+ close alphawr  
+ close numwr  
+ close othwr  
+ return   
+ 
